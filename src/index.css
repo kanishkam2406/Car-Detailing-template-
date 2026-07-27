@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   APEX DETAIL — Dark luxury automotive design system
+   All colors HSL. Champagne gold accent on near-black base.
+   ========================================================================== */
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: 0 0% 4%;          /* #0A0A0A */
+    --surface: 0 0% 7%;             /* #111111 */
+    --surface-elevated: 0 0% 10%;   /* #1A1A1A */
+    --foreground: 40 15% 92%;       /* warm off-white */
+
+    --card: 0 0% 7%;
+    --card-foreground: 40 15% 92%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 40 15% 92%;
+
+    /* Off-white accent */
+    --primary: 40 20% 94%;          /* warm off-white */
+    --primary-foreground: 0 0% 4%;
+    --primary-glow: 0 0% 100%;      /* pure white glow */
+    --primary-deep: 40 10% 70%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 15% 92%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;   /* #8A8A8A */
+
+    --accent: 40 20% 94%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 40 15% 92%;
+
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 40 20% 94%;
+
+    --radius: 0.25rem;
+
+    /* Brand gradients & shadows (off-white) */
+    --gradient-gold: linear-gradient(135deg, hsl(0 0% 100%), hsl(40 10% 70%));
+    --gradient-radial-gold: radial-gradient(circle at 50% 50%, hsl(40 20% 94% / 0.12), transparent 60%);
+    --gradient-fade-bottom: linear-gradient(180deg, transparent, hsl(0 0% 4%) 95%);
+    --gradient-fade-top: linear-gradient(180deg, hsl(0 0% 4%) 0%, transparent 30%);
+    --shadow-gold: 0 0 60px -10px hsl(40 20% 94% / 0.35);
+    --shadow-gold-soft: 0 0 120px -20px hsl(40 20% 94% / 0.18);
+
+    /* Motion */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 40 15% 92%;
+    --sidebar-primary: 40 20% 94%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 40 15% 92%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 40 20% 94%;
+  }
+
+  .dark {
+    /* same — site is dark by default */
+    --background: 0 0% 4%;
+    --foreground: 40 15% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply bg-background;
+    scroll-behavior: auto; /* Lenis handles it */
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-feature-settings: 'ss01';
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .display-xl {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(3rem, 9vw, 8.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+
+  .display-lg {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 0.96;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: hsl(var(--primary));
+  }
+
+  .label-mono {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Reusable noise/grain overlay for premium texture */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+    opacity: 0.06;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .glow-pulse {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.6);
+    animation: glow-pulse 2.4s var(--ease-in-out-cubic) infinite;
+  }
+
+  /* Hide native scrollbars but keep functionality */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+}
+
+@keyframes glow-pulse {
+  0%   { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.55); }
+  70%  { box-shadow: 0 0 0 24px hsl(var(--primary) / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+}
+
+@keyframes light-streak {
+  0%   { transform: translateX(-120%) skewX(-20deg); }
+  100% { transform: translateX(220%) skewX(-20deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
