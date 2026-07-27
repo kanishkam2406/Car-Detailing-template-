@@ -2,7 +2,7 @@
 
 A high-performance, modern, and fully responsive website template designed specifically for premium auto detailing services. Showcases ceramic coating, paint correction, interior restoration, and other obsessive car care services. Built with industry-standard web tech and smooth animations to provide an ultra-premium user experience.
 
-Live Demo: [https://kanishkam2406.github.io/Car-Detailing-template-/](https://kanishkam2406.github.io/Car-Detailing-template-/) (or your deployed Vercel/Netlify link)
+Live Demo: [https://cardetailings.vercel.app/](https://cardetailings.vercel.app/)
 
 ---
 
