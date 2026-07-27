@@ -113,7 +113,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👤 Author
 
-Developed & Maintained by **kanishkam2406**
+Developed & Maintained by **Kanishka Mishra**
 
 - **GitHub:** [@kanishkam2406](https://github.com/kanishkam2406)
 - **Project Link:** [https://github.com/kanishkam2406/Car-Detailing-template-](https://github.com/kanishkam2406/Car-Detailing-template-)
